@@ -1,0 +1,128 @@
+{
+  "info": {
+    "name": "Knygnesys NFR2 Progress Endpoint - Security & Performance",
+    "_postman_id": "knygnesys-nfr2-collection",
+    "description": "Nefunkciniai reikalavimai skaitymo pozicijos endpoint'ui (R3 - PUT /api/library/{id}/progress). Saugumas (401 be sesijos) ir performance (<500ms). Paleisti su 10 iteracijų.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:10032" }
+  ],
+  "item": [
+    {
+      "name": "NFR-2-TC1: Saugumas - 401 be sesijos",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var baseUrl = pm.collectionVariables.get('baseUrl');",
+              "pm.sendRequest({ url: baseUrl + '/api/auth/logout', method: 'POST' }, function (err, res) { console.log('Logout: ' + (res ? res.code : 'n/a')); });"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('NFR-2-TC1: Neprisijungęs vartotojas gauna 401', function () {",
+              "  pm.response.to.have.status(401);",
+              "});",
+              "pm.test('NFR-2-TC1: Atsakyme nėra duomenų', function () {",
+              "  pm.expect(pm.response.text()).to.not.include('currentPage');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"currentPage\": 10\n}" },
+        "url": { "raw": "{{baseUrl}}/api/library/1/progress", "host": ["{{baseUrl}}"], "path": ["api", "library", "1", "progress"] }
+      }
+    },
+    {
+      "name": "NFR-2-TC2: Performance - PUT /progress ≤ 500ms",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var baseUrl = pm.collectionVariables.get('baseUrl');",
+              "if (!pm.collectionVariables.get('readingListId')) {",
+              "  var ts = new Date().getTime();",
+              "  pm.collectionVariables.set('username', 'perf_' + ts);",
+              "  pm.collectionVariables.set('email', 'perf_' + ts + '@test.lt');",
+              "  pm.sendRequest({",
+              "    url: baseUrl + '/api/auth/register',",
+              "    method: 'POST',",
+              "    header: { 'Content-Type': 'application/json' },",
+              "    body: { mode: 'raw', raw: JSON.stringify({",
+              "      email: pm.collectionVariables.get('email'),",
+              "      username: pm.collectionVariables.get('username'),",
+              "      password: 'password123'",
+              "    }) }",
+              "  }, function () {",
+              "    pm.sendRequest({",
+              "      url: baseUrl + '/api/auth/login',",
+              "      method: 'POST',",
+              "      header: { 'Content-Type': 'application/json' },",
+              "      body: { mode: 'raw', raw: JSON.stringify({",
+              "        username: pm.collectionVariables.get('username'),",
+              "        password: 'password123'",
+              "      }) }",
+              "    }, function () {",
+              "      pm.sendRequest({",
+              "        url: baseUrl + '/api/library',",
+              "        method: 'POST',",
+              "        header: { 'Content-Type': 'application/json' },",
+              "        body: { mode: 'raw', raw: JSON.stringify({",
+              "          olId: '/works/PERF_' + ts,",
+              "          title: 'Performance testas',",
+              "          author: 'Autorius',",
+              "          coverUrl: null,",
+              "          pageCount: 500,",
+              "          status: 'WANT_TO_READ'",
+              "        }) }",
+              "      }, function (err, res) {",
+              "        pm.collectionVariables.set('readingListId', res.json().readingListId);",
+              "      });",
+              "    });",
+              "  });",
+              "} else {",
+              "  pm.sendRequest({",
+              "    url: baseUrl + '/api/auth/login',",
+              "    method: 'POST',",
+              "    header: { 'Content-Type': 'application/json' },",
+              "    body: { mode: 'raw', raw: JSON.stringify({",
+              "      username: pm.collectionVariables.get('username'),",
+              "      password: 'password123'",
+              "    }) }",
+              "  }, function () {});",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('NFR-2-TC2: Statusas 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('NFR-2-TC2: Atsakymo laikas ≤ 500ms', function () {",
+              "  pm.expect(pm.response.responseTime).to.be.below(500);",
+              "});",
+              "console.log('Progress endpoint atsakymo laikas: ' + pm.response.responseTime + 'ms');"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"currentPage\": 100\n}" },
+        "url": { "raw": "{{baseUrl}}/api/library/{{readingListId}}/progress", "host": ["{{baseUrl}}"], "path": ["api", "library", "{{readingListId}}", "progress"] }
+      }
+    }
+  ]
+}

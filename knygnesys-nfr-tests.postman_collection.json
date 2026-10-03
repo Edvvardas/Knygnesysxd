@@ -1,0 +1,135 @@
+{
+  "info": {
+    "name": "Knygnesys NFR Tests",
+    "description": "Non-functional requirement tests for Epic KK-72 (Statistika, tikslai ir vizualizacijos).\n\nCovers:\n- KK-163: Našumas grafikam ir API (API response < 500ms)\n- KK-164: Patikimumas priminimo, tikslų sistemos (Goals endpoint reliability)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:10032",
+      "type": "string"
+    },
+    {
+      "key": "authToken",
+      "value": "<paste-your-jwt-token-here>",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "[KK-163] GET /api/stats - API response < 500ms",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{authToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/stats?period=WEEK",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "stats"],
+          "query": [
+            {
+              "key": "period",
+              "value": "WEEK"
+            }
+          ]
+        },
+        "description": "KK-163: Našumas grafikam ir API\nVerifies that the stats API responds within 500ms and returns the correct JSON structure."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('[KK-163] Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('[KK-163] API atsakas greitesnis nei 500ms', function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);",
+              "});",
+              "",
+              "pm.test('[KK-163] Atsakas turi laukiamus laukus: summary, period, dataPoints', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property('summary');",
+              "    pm.expect(json).to.have.property('period');",
+              "    pm.expect(json).to.have.property('dataPoints');",
+              "});",
+              "",
+              "pm.test('[KK-163] period reikšmė lygi WEEK', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.period).to.eql('WEEK');",
+              "});",
+              "",
+              "pm.test('[KK-163] dataPoints yra masyvas', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.dataPoints).to.be.an('array');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "[KK-164] GET /api/goals - Goals endpoint reliability",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{authToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/goals",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "goals"]
+        },
+        "description": "KK-164: Patikimumas priminimo, tikslų sistemos\nVerifies that the goals endpoint is available, responds within 500ms, and returns a valid goal response structure."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('[KK-164] Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('[KK-164] Tikslų API atsakas greitesnis nei 500ms', function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);",
+              "});",
+              "",
+              "pm.test('[KK-164] Atsakas turi laukiamus laukus: targetBooks, booksRead, progressPercent', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property('targetBooks');",
+              "    pm.expect(json).to.have.property('booksRead');",
+              "    pm.expect(json).to.have.property('progressPercent');",
+              "});",
+              "",
+              "pm.test('[KK-164] booksRead yra neneigiamas skaičius', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.booksRead).to.be.a('number');",
+              "    pm.expect(json.booksRead).to.be.at.least(0);",
+              "});",
+              "",
+              "pm.test('[KK-164] progressPercent yra tarp 0 ir 100', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.progressPercent).to.be.a('number');",
+              "    pm.expect(json.progressPercent).to.be.within(0, 100);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

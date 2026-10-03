@@ -1,0 +1,2 @@
+ALTER TABLE reading_list ADD COLUMN IF NOT EXISTS current_page INT DEFAULT 0;
+ALTER TABLE reading_list ADD COLUMN IF NOT EXISTS completed_at TIMESTAMP;

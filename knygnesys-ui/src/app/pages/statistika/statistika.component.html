@@ -1,0 +1,98 @@
+<div class="statistika">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Skaitymo statistika</h1>
+        <p>Peržiūrėkite savo skaitymo istoriją pagal pasirinktą laikotarpį</p>
+      </div>
+
+      <div class="timeline-shell">
+        <div class="period-pills" role="tablist" aria-label="Laikotarpio pasirinkimas">
+          @for (preset of presets; track preset.id) {
+            <button
+              class="period-pill"
+              [class.active]="selectedPreset() === preset.id"
+              (click)="applyPreset(preset.id)"
+            >
+              {{ preset.label }}
+            </button>
+          }
+        </div>
+
+        @if (isCustom()) {
+          <div class="custom-range">
+            <label class="control-group">
+              <span>Pradžia</span>
+              <input type="date" class="period-input" [value]="customStart()" [max]="todayDate" (change)="onCustomStartChange($event)" />
+            </label>
+            <label class="control-group">
+              <span>Pabaiga</span>
+              <input type="date" class="period-input" [value]="customEnd()" [max]="todayDate" (change)="onCustomEndChange($event)" />
+            </label>
+            <button class="apply-btn" (click)="applyCustomRange()">Taikyti</button>
+          </div>
+
+          <div class="timeline-toolbar">
+            <div class="hybrid-nav">
+              <button class="nav-btn" (click)="prevPeriod()" aria-label="Previous period">&#8249;</button>
+              <div class="range-chip">{{ rangeStart() }} - {{ rangeEnd() }}</div>
+              <button class="nav-btn" (click)="nextPeriod()" [disabled]="isCurrentPeriod()" aria-label="Next period">&#8250;</button>
+            </div>
+
+            <button class="now-btn" (click)="jumpToCurrentPeriod()">Dabar</button>
+          </div>
+        }
+
+        <div class="period-hint">
+          {{ filterContext() }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-content">
+    @if (isLoading()) {
+      <div class="stats-loading">
+        <div class="spinner"></div>
+        <span>Kraunama statistika...</span>
+      </div>
+    } @else if (error()) {
+      <div class="stats-error">{{ error() }}</div>
+    } @else if (stats(); as s) {
+      <div class="summary-cards">
+        <div class="summary-card">
+          <div class="card-value">{{ s.summary.totalBooks }}</div>
+          <div class="card-label">Iš viso knygų</div>
+        </div>
+        <div class="summary-card card-finished">
+          <div class="card-value">{{ s.summary.completed }}</div>
+          <div class="card-label">Perskaitytos</div>
+        </div>
+        <div class="summary-card card-reading">
+          <div class="card-value">{{ s.summary.reading }}</div>
+          <div class="card-label">Skaitomos</div>
+        </div>
+        <div class="summary-card card-want">
+          <div class="card-value">{{ s.summary.wantToRead }}</div>
+          <div class="card-label">Noriu skaityti</div>
+        </div>
+      </div>
+
+      <div class="charts-section">
+        <div class="charts-grid">
+          <div class="chart-full">
+            <app-books-per-month-chart [dataPoints]="s.dataPoints" [period]="resolvedGranularity()" />
+          </div>
+
+          <div class="chart-half">
+            <app-pages-per-day-chart [dataPoints]="pagesPerDay()" />
+          </div>
+
+          <div class="chart-half">
+            <app-genres-chart [dataPoints]="genreStats()" />
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

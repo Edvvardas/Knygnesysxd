@@ -1,0 +1,125 @@
+{
+  "info": {
+    "name": "Knygnesys FR2 EPUB & Library Integration Tests",
+    "_postman_id": "knygnesys-fr2-epub-collection",
+    "description": "Funkciniai integraciniai testai R3 reikalavimui (skaitymo pozicijos sync tarp Controller <-> DB). 2 testai: UC (fiksavimas) ir BVA (auto-finish). PUT /progress grąžina 204/200 Void, todėl būsena tikrinama per GET /api/library.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:10032" }
+  ],
+  "item": [
+    {
+      "name": "R3-TC1: Išsaugoti skaitymo poziciją (UC - fiksavimas)",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var ts = new Date().getTime();",
+              "var baseUrl = pm.collectionVariables.get('baseUrl');",
+              "pm.collectionVariables.set('username', 'epub_' + ts);",
+              "pm.collectionVariables.set('email', 'epub_' + ts + '@test.lt');",
+              "pm.sendRequest({",
+              "  url: baseUrl + '/api/auth/register',",
+              "  method: 'POST',",
+              "  header: { 'Content-Type': 'application/json' },",
+              "  body: { mode: 'raw', raw: JSON.stringify({",
+              "    email: pm.collectionVariables.get('email'),",
+              "    username: pm.collectionVariables.get('username'),",
+              "    password: 'password123'",
+              "  }) }",
+              "}, function () {",
+              "  pm.sendRequest({",
+              "    url: baseUrl + '/api/auth/login',",
+              "    method: 'POST',",
+              "    header: { 'Content-Type': 'application/json' },",
+              "    body: { mode: 'raw', raw: JSON.stringify({",
+              "      username: pm.collectionVariables.get('username'),",
+              "      password: 'password123'",
+              "    }) }",
+              "  }, function () {",
+              "    pm.sendRequest({",
+              "      url: baseUrl + '/api/library',",
+              "      method: 'POST',",
+              "      header: { 'Content-Type': 'application/json' },",
+              "      body: { mode: 'raw', raw: JSON.stringify({",
+              "        olId: '/works/OL_' + ts,",
+              "        title: 'Testinė knyga',",
+              "        author: 'Autorius',",
+              "        coverUrl: null,",
+              "        pageCount: 300,",
+              "        status: 'WANT_TO_READ'",
+              "      }) }",
+              "    }, function (err, res) {",
+              "      var id = res.json().readingListId;",
+              "      pm.collectionVariables.set('readingListId', id);",
+              "    });",
+              "  });",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('R3-TC1: PUT /progress grąžina 200', function () { pm.response.to.have.status(200); });",
+              "var baseUrl = pm.collectionVariables.get('baseUrl');",
+              "var targetId = pm.collectionVariables.get('readingListId');",
+              "pm.sendRequest({ url: baseUrl + '/api/library', method: 'GET' }, function (err, res) {",
+              "  var books = res.json();",
+              "  var book = books.find(function (b) { return b.readingListId == targetId; });",
+              "  pm.test('R3-TC1: currentPage atnaujintas į 50', function () {",
+              "    pm.expect(book).to.not.be.undefined;",
+              "    pm.expect(book.currentPage).to.eql(50);",
+              "  });",
+              "  pm.test('R3-TC1: Statusas pakeistas į READING', function () {",
+              "    pm.expect(book.status).to.eql('READING');",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"currentPage\": 50\n}" },
+        "url": { "raw": "{{baseUrl}}/api/library/{{readingListId}}/progress", "host": ["{{baseUrl}}"], "path": ["api", "library", "{{readingListId}}", "progress"] }
+      }
+    },
+    {
+      "name": "R3-TC2: Auto-finish kai currentPage = pageCount (BVA)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('R3-TC2: PUT /progress grąžina 200', function () { pm.response.to.have.status(200); });",
+              "var baseUrl = pm.collectionVariables.get('baseUrl');",
+              "var targetId = pm.collectionVariables.get('readingListId');",
+              "pm.sendRequest({ url: baseUrl + '/api/library', method: 'GET' }, function (err, res) {",
+              "  var books = res.json();",
+              "  var book = books.find(function (b) { return b.readingListId == targetId; });",
+              "  pm.test('R3-TC2: Statusas pakeistas į FINISHED', function () {",
+              "    pm.expect(book).to.not.be.undefined;",
+              "    pm.expect(book.status).to.eql('FINISHED');",
+              "  });",
+              "  pm.test('R3-TC2: completedAt užpildytas', function () {",
+              "    pm.expect(book.completedAt).to.not.be.null;",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"currentPage\": 300\n}" },
+        "url": { "raw": "{{baseUrl}}/api/library/{{readingListId}}/progress", "host": ["{{baseUrl}}"], "path": ["api", "library", "{{readingListId}}", "progress"] }
+      }
+    }
+  ]
+}

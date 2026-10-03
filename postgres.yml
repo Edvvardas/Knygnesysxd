@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  database:
+    image: "postgres:latest"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: knygnesys_db
+      POSTGRES_PASSWORD: knygnesys_pw
+      POSTGRES_DB: knygnesys_db
+    volumes:
+      - knygnesys_db_data:/var/lib/postgresql/
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+volumes:
+  knygnesys_db_data:

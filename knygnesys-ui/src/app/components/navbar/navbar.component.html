@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" routerLink="/">
+      <span class="brand-icon">K</span>
+      <span class="brand-text">Knygnesys</span>
+    </a>
+    <div class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Pradžia</a>
+      <a routerLink="/biblioteka" routerLinkActive="active">Mano biblioteka</a>
+      <a routerLink="/statistika" routerLinkActive="active">Statistika</a>
+    </div>
+    <button class="logout-btn" (click)="logout()">Atsijungti</button>
+  </div>
+</nav>

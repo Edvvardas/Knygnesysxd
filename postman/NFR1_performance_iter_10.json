@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "Knygnesys NFR1 Performance Tests",
+    "_postman_id": "knygnesys-nfr1-collection",
+    "description": "NFR-1 nefunkcinis reikalavimas - atsakymo laikas. Paleisti su 10 iteracijų.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:10032"
+    }
+  ],
+  "item": [
+    {
+      "name": "NFR-1-TC1: Register ≤ 500ms",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var timestamp = new Date().getTime();",
+              "pm.variables.set('nfr_email', 'nfr_' + timestamp + '@test.lt');",
+              "pm.variables.set('nfr_username', 'nfr_user_' + timestamp);"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('NFR-1-TC1: Atsakymo laikas ≤ 500ms', function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);",
+              "});",
+              "pm.test('NFR-1-TC1: Registracija sėkminga (201)', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "console.log('Register atsakymo laikas: ' + pm.response.responseTime + 'ms');"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{nfr_email}}\",\n  \"username\": \"{{nfr_username}}\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api", "auth", "register"] }
+      }
+    },
+    {
+      "name": "NFR-1-TC2: Login ≤ 300ms",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('NFR-1-TC2: Atsakymo laikas ≤ 300ms', function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(300);",
+              "});",
+              "pm.test('NFR-1-TC2: Prisijungimas sėkmingas (200)', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "console.log('Login atsakymo laikas: ' + pm.response.responseTime + 'ms');"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] }
+      }
+    }
+  ]
+}

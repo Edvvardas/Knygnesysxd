@@ -1,0 +1,131 @@
+<div class="home">
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>Sveiki sugrįžę</h1>
+                <p>Tęskite skaitymo kelionę arba atraskite naujų knygų</p>
+            </div>
+            <div class="search-bar">
+                <input
+                    type="text"
+                    placeholder="Ieškoti knygų pagal pavadinimą, autorių ar ISBN..."
+                    [(ngModel)]="searchQuery"
+                    (keydown)="onSearchKeydown($event)"
+                />
+                <button (click)="onSearch()">Ieškoti</button>
+                <button class="clear-btn" *ngIf="hasSearched" (click)="clearSearch()">&#x2715;</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-content">
+
+        <section class="content-section search-results-section" *ngIf="hasSearched">
+            <div class="section-header">
+                <h5>Paieškos rezultatai: „{{ searchQuery }}"</h5>
+                <span class="results-count" *ngIf="!isLoading && !errorMessage">{{ searchResults.length }} rezultatų</span>
+            </div>
+
+            <div class="search-loading" *ngIf="isLoading">
+                <div class="spinner"></div>
+                <span>Ieškoma...</span>
+            </div>
+
+            <div class="search-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+            <div class="search-empty" *ngIf="!isLoading && !errorMessage && searchResults.length === 0">
+                Nerasta knygų pagal „{{ searchQuery }}".
+            </div>
+
+            <div class="books-grid" *ngIf="!isLoading && searchResults.length > 0">
+                <div class="book-card" *ngFor="let book of searchResults">
+                    <div class="book-cover">
+                        <img *ngIf="book.coverUrl" [src]="book.coverUrl" [alt]="book.title" />
+                        <div class="no-cover" *ngIf="!book.coverUrl">
+                            <span>Viršelis<br/>nepasiekiamas</span>
+                        </div>
+                    </div>
+                    <div class="book-meta">
+                        <div class="book-title">{{ book.title }}</div>
+                        <div class="book-author" *ngIf="book.authors.length > 0">{{ book.authors[0] }}</div>
+                        <div class="book-year" *ngIf="book.firstPublishYear">{{ book.firstPublishYear }}</div>
+                        <button
+                            class="add-btn"
+                            [disabled]="isInLibrary(book) || addingBookKey() === book.key"
+                            (click)="addToLibrary(book)"
+                        >
+                            <span *ngIf="addingBookKey() === book.key" class="spinner-sm"></span>
+                            <span *ngIf="addingBookKey() !== book.key && isInLibrary(book)">✓ Bibliotekoje</span>
+                            <span *ngIf="addingBookKey() !== book.key && !isInLibrary(book)">+ Pridėti</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" *ngIf="!hasSearched">
+            <div class="section-header">
+                <h5>Rekomenduojama jums</h5>
+            </div>
+
+            <div class="recommendations-loading" *ngIf="recommendationsLoading()">
+                <div class="spinner"></div>
+                <span>Kraunamos rekomendacijos...</span>
+            </div>
+
+            <div class="recommendations-empty" *ngIf="!recommendationsLoading() && recommendations().length === 0">
+                Pridėkite knygų į biblioteką, kad gautumėte rekomendacijų.
+            </div>
+
+            <div class="books-grid" *ngIf="recommendations().length > 0">
+                <div class="book-card" *ngFor="let book of recommendations()">
+                    <div class="book-cover">
+                        <img *ngIf="book.coverUrl" [src]="book.coverUrl" [alt]="book.title" />
+                        <div class="no-cover" *ngIf="!book.coverUrl">
+                            <span>Viršelis<br/>nepasiekiamas</span>
+                        </div>
+                    </div>
+                    <div class="book-meta">
+                        <div class="book-title">{{ book.title }}</div>
+                        <div class="book-author" *ngIf="book.authors.length > 0">{{ book.authors[0] }}</div>
+                        <button
+                            class="add-btn"
+                            [disabled]="isInLibrary(book) || addingBookKey() === book.key"
+                            (click)="addToLibrary(book)"
+                        >
+                            <span *ngIf="addingBookKey() === book.key" class="spinner-sm"></span>
+                            <span *ngIf="addingBookKey() !== book.key && isInLibrary(book)">✓ Bibliotekoje</span>
+                            <span *ngIf="addingBookKey() !== book.key && !isInLibrary(book)">+ Pridėti</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" *ngIf="!hasSearched">
+            <div class="section-header">
+                <h5>Skaitymo statistika</h5>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">{{ statsFinished() }}</span>
+                    <span class="stat-label">Perskaitytos knygos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">{{ statsPages() }}</span>
+                    <span class="stat-label">Perskaityti puslapiai</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">{{ statsReading() }}</span>
+                    <span class="stat-label">Skaitomos dabar</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">{{ statsTotal() }}</span>
+                    <span class="stat-label">Iš viso knygų</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

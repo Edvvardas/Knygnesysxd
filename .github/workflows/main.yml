@@ -1,0 +1,108 @@
+name: Main Branch CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: knygnesys_db
+          POSTGRES_USER: knygnesys_db
+          POSTGRES_PASSWORD: knygnesys_pw
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout kodo saugykla
+        uses: actions/checkout@v4
+
+      - name: Nustatyti Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Įdiegti Maven
+        run: |
+          curl -sL https://archive.apache.org/dist/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz | tar -xz -C /opt
+          echo "/opt/apache-maven-3.9.6/bin" >> $GITHUB_PATH
+
+      - name: Vykdyti Flyway migracijas
+        working-directory: db-migration
+        run: mvn clean flyway:migrate -Dflyway.url=jdbc:postgresql://localhost:5432/knygnesys_db -Dflyway.user=knygnesys_db -Dflyway.password=knygnesys_pw
+
+      - name: Suteikti mvnw teises
+        working-directory: knygnesys-app
+        run: |
+          sed -i 's/\r//' mvnw
+          chmod +x mvnw
+
+      - name: Build
+        working-directory: knygnesys-app
+        run: ./mvnw clean package -DskipTests
+
+      - name: Testai (unit)
+        working-directory: knygnesys-app
+        run: ./mvnw test
+
+      - name: Paleisti backend aplikaciją
+        working-directory: knygnesys-app
+        run: nohup ./mvnw spring-boot:run > /tmp/app.log 2>&1 &
+        env:
+          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/knygnesys_db
+          SPRING_DATASOURCE_USERNAME: knygnesys_db
+          SPRING_DATASOURCE_PASSWORD: knygnesys_pw
+          SPRING_SESSION_JDBC_INITIALIZE_SCHEMA: never
+
+      - name: Palaukti kol aplikacija pasileis
+        run: |
+          echo "Laukiama kol aplikacija pasileis..."
+          for i in {1..30}; do
+            if curl -s http://localhost:10032/api-docs > /dev/null; then
+              echo "Aplikacija paleista!"
+              break
+            fi
+            echo "Bandymas $i/30..."
+            tail -5 /tmp/app.log 2>/dev/null || true
+            sleep 3
+          done
+          echo "=== Pilni app logai ==="
+          cat /tmp/app.log || true
+
+      - name: Postman testai (Newman)
+        run: |
+          npm install -g newman
+          for file in postman/*.json; do
+            filename=$(basename "$file" .json)
+            iterations=$(echo "$filename" | grep -oP '(?<=_iter_)\d+' || echo "1")
+            iterations=${iterations:-1}
+            echo "Running $filename with $iterations iteration(s)..."
+            newman run "$file" \
+              --iteration-count $iterations \
+              --reporters cli,json \
+              --reporter-json-export newman-results-${filename}.json
+          done
+
+      - name: Įkelti testų ataskaitas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-main
+          path: |
+            knygnesys-app/target/surefire-reports/
+            newman-results-*.json

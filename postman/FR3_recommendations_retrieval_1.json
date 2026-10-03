@@ -1,0 +1,75 @@
+{
+  "info": {
+    "name": "FR3 Recommendations Retrieval",
+    "_postman_id": "fr3-recommendations-retrieval",
+    "description": "FR3 funkcinis testas: rekomendacijų gavimas iš API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:10032"
+    }
+  ],
+  "item": [
+    {
+      "name": "FR3-TC1: Sėkmingas rekomendacijų gavimas",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var ts = new Date().getTime();",
+              "var baseUrl = pm.collectionVariables.get('baseUrl');",
+              "var username = 'fr3_' + ts;",
+              "pm.sendRequest({",
+              "  url: baseUrl + '/api/auth/register',",
+              "  method: 'POST',",
+              "  header: { 'Content-Type': 'application/json' },",
+              "  body: { mode: 'raw', raw: JSON.stringify({ email: username + '@test.lt', username: username, password: 'password123' }) }",
+              "}, function () {",
+              "  pm.sendRequest({",
+              "    url: baseUrl + '/api/auth/login',",
+              "    method: 'POST',",
+              "    header: { 'Content-Type': 'application/json' },",
+              "    body: { mode: 'raw', raw: JSON.stringify({ username: username, password: 'password123' }) }",
+              "  }, function () {});",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC1: Statusas 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "if (pm.response.code === 200) {",
+              "    var json = pm.response.json();",
+              "",
+              "    pm.test('TC1: Atsakymas yra masyvas', function () {",
+              "        pm.expect(Array.isArray(json)).to.eql(true);",
+              "    });",
+              "",
+              "    pm.test('TC1: Yra bent viena rekomendacija', function () {",
+              "        pm.expect(json.length).to.be.above(0);",
+              "    });",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/recommendations/popular",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "recommendations", "popular"]
+        }
+      }
+    }
+  ]
+}

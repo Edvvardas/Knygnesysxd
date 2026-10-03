@@ -1,0 +1,283 @@
+<div class="biblioteka">
+
+  <!-- EPUB Reader modal -->
+  @if (epubReaderKey() !== null) {
+    <app-epub-reader
+      [bookKey]="epubReaderKey()!"
+      [title]="epubReaderTitle()"
+      [readingListId]="epubReaderListId()!"
+      [pageCount]="epubReaderPageCount()"
+      (close)="closeEpubReader()"
+      (progressChanged)="onProgressChanged($event)"
+    />
+  }
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Mano biblioteka</h1>
+        <p>Ieškokite knygų ir pridėkite jas į savo biblioteką</p>
+      </div>
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Ieškoti knygų pagal pavadinimą arba autorių..."
+          [(ngModel)]="searchQuery"
+          (keydown)="onSearchKeydown($event)"
+        />
+        <button (click)="onSearch()">Ieškoti</button>
+        @if (hasSearched) {
+          <button class="clear-btn" (click)="clearSearch()">&#x2715;</button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="main-layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h6>Filtruoti</h6>
+        <ul>
+          <li [class.active]="activeFilter() === 'VISI'" (click)="activeFilter.set('VISI')">
+            Visa biblioteka
+            <span class="badge">{{ library().length }}</span>
+          </li>
+          <li [class.active]="activeFilter() === 'READING'" (click)="activeFilter.set('READING')">
+            Skaitau dabar
+            <span class="badge">{{ countByStatus('READING') }}</span>
+          </li>
+          <li [class.active]="activeFilter() === 'WANT_TO_READ'" (click)="activeFilter.set('WANT_TO_READ')">
+            Noriu skaityti
+            <span class="badge">{{ countByStatus('WANT_TO_READ') }}</span>
+          </li>
+          <li [class.active]="activeFilter() === 'FINISHED'" (click)="activeFilter.set('FINISHED')">
+            Perskaičiau
+            <span class="badge">{{ countByStatus('FINISHED') }}</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="content">
+
+      <!-- Search results -->
+      @if (hasSearched) {
+        <section class="content-section">
+          <div class="section-header">
+            <h5>Paieškos rezultatai: „{{ searchQuery }}"</h5>
+            @if (!isSearchLoading && !searchError) {
+              <span class="results-count">{{ searchResults.length }} rezultatų</span>
+            }
+          </div>
+
+          @if (isSearchLoading) {
+            <div class="search-loading">
+              <div class="spinner"></div>
+              <span>Ieškoma...</span>
+            </div>
+          }
+
+          @if (searchError) {
+            <div class="search-error">{{ searchError }}</div>
+          }
+
+          @if (!isSearchLoading && !searchError && searchResults.length === 0) {
+            <div class="search-empty">Nerasta knygų pagal „{{ searchQuery }}".</div>
+          }
+
+          @if (!isSearchLoading && searchResults.length > 0) {
+            <div class="books-grid">
+              @for (book of searchResults; track book.key) {
+                <div class="book-card search-card">
+                  <div class="book-cover">
+                    @if (book.coverUrl) {
+                      <img [src]="book.coverUrl" [alt]="book.title" />
+                    } @else {
+                      <div class="no-cover"><span>Viršelis<br/>nepasiekiamas</span></div>
+                    }
+                  </div>
+                  <div class="book-meta">
+                    <div class="book-title">{{ book.title }}</div>
+                    @if (book.authors.length > 0) {
+                      <div class="book-author">{{ book.authors[0] }}</div>
+                    }
+                    @if (book.firstPublishYear) {
+                      <div class="book-year">{{ book.firstPublishYear }}</div>
+                    }
+                    <button
+                      class="add-btn"
+                      [disabled]="isInLibrary(book) || addingBookKey() === book.key"
+                      (click)="addToLibrary(book)"
+                    >
+                      @if (addingBookKey() === book.key) {
+                        <span class="spinner-sm"></span>
+                      } @else if (isInLibrary(book)) {
+                        ✓ Bibliotekoje
+                      } @else {
+                        + Pridėti
+                      }
+                    </button>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </section>
+      }
+
+      <!-- My library -->
+      <section class="content-section">
+
+        <section class="content-section" style="padding-bottom: 0;">
+          <div class="section-header">
+            <h5>Filtrai</h5>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: end; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <div style="flex: 1; min-width: 200px;">
+              <label style="display: block; margin-bottom: 0.25rem; font-size: 0.875rem;">Pavadinimas</label>
+              <input
+                type="text"
+                placeholder="Ieškoti pagal pavadinimą..."
+                [(ngModel)]="filters().title"
+                style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"
+              />
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+              <label style="display: block; margin-bottom: 0.25rem; font-size: 0.875rem;">Autorius</label>
+              <input
+                type="text"
+                placeholder="Ieškoti pagal autorių..."
+                [(ngModel)]="filters().author"
+                style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"
+              />
+            </div>
+            <div style="min-width: 150px;">
+              <label style="display: block; margin-bottom: 0.25rem; font-size: 0.875rem;">Min. puslapių</label>
+              <input
+                type="number"
+                placeholder="0"
+                [(ngModel)]="filters().progress"
+                min="0"
+                style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"
+              />
+            </div>
+            <button (click)="applyFilters()" style="padding: 0.5rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+              Filtruoti
+            </button>
+            <button (click)="clearFilters()" style="padding: 0.5rem 1.5rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">
+              Valyti
+            </button>
+          </div>
+        </section>
+
+        <div class="section-header">
+          <h5>
+            @if (activeFilter() === 'VISI') { Visa biblioteka }
+            @else if (activeFilter() === 'READING') { Skaitau dabar }
+            @else if (activeFilter() === 'WANT_TO_READ') { Noriu skaityti }
+            @else { Perskaičiau }
+          </h5>
+        </div>
+
+        @if (isLibraryLoading()) {
+          <div class="search-loading">
+            <div class="spinner"></div>
+            <span>Kraunama...</span>
+          </div>
+        }
+
+        @if (libraryError()) {
+          <div class="search-error">{{ libraryError() }}</div>
+        }
+
+        @if (!isLibraryLoading() && filteredLibrary.length === 0 && !libraryError()) {
+          <div class="library-empty">
+            <p>Biblioteka tuščia.</p>
+            @if (!hasSearched) {
+              <p>Naudokite paiešką viršuje, kad rastumėte ir pridėtumėte knygų.</p>
+            }
+          </div>
+        }
+
+        @if (!isLibraryLoading() && filteredLibrary.length > 0) {
+          <div class="books-grid">
+            @for (book of filteredLibrary; track book.readingListId) {
+              <div class="book-card library-card">
+                <div class="book-cover">
+                  @if (book.coverUrl) {
+                    <img [src]="book.coverUrl" [alt]="book.title" />
+                  } @else {
+                    <div class="no-cover"><span>Viršelis<br/>nepasiekiamas</span></div>
+                  }
+                  <span class="status-badge status-{{ book.status | lowercase }}">
+                    {{ statusLabel(book.status) }}
+                  </span>
+                </div>
+                <div class="book-meta">
+                  <div class="book-title">{{ book.title }}</div>
+                  @if (book.author) {
+                    <div class="book-author">{{ book.author }}</div>
+                  }
+                  <div class="progress-bar-wrap">
+                    @if (book.pageCount) {
+                      <div class="progress-bar-track">
+                        <div class="progress-bar-fill" [style.width.%]="(book.currentPage / book.pageCount) * 100"></div>
+                      </div>
+                    }
+                    <div class="progress-controls">
+                      <button class="page-btn" (click)="changeCurrentPage(book, -1)" [disabled]="book.currentPage <= 0">−</button>
+                      <div class="progress-input-wrap">
+                        <input
+                          type="number"
+                          class="page-input"
+                          [value]="book.currentPage"
+                          min="0"
+                          [max]="book.pageCount ?? 99999"
+                          (change)="setCurrentPage(book, $event)"
+                          (keydown.enter)="$any($event.target).blur()"
+                        />
+                        @if (book.pageCount) {
+                          <span class="progress-label">/ {{ book.pageCount }} psl.</span>
+                        } @else {
+                          <span class="progress-label">psl.</span>
+                        }
+                      </div>
+                      <button class="page-btn" (click)="changeCurrentPage(book, 1)" [disabled]="book.pageCount && book.currentPage >= book.pageCount">+</button>
+                    </div>
+                  </div>
+                  <div class="book-actions">
+                    @if (hasLocalEpub(book)) {
+                      <button class="read-btn" (click)="openEpubReader(book)">
+                        📖 Skaityti
+                      </button>
+                    } @else {
+                      <label class="upload-btn" [class.uploading]="uploadingKey() === book.olId">
+                        @if (uploadingKey() === book.olId) {
+                          <span class="spinner-sm"></span> Išsaugoma...
+                        } @else {
+                          📎 Pridėti EPUB
+                        }
+                        <input
+                          type="file"
+                          accept=".epub"
+                          style="display:none"
+                          (change)="onEpubFileSelected($event, book)"
+                          [disabled]="uploadingKey() === book.olId"
+                        />
+                      </label>
+                    }
+                    <button class="remove-btn" (click)="removeFromLibrary(book)" title="Pašalinti">
+                      🗑
+                    </button>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </section>
+
+    </main>
+  </div>
+</div>

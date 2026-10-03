@@ -1,0 +1,482 @@
+$border: #e0e0e0;
+$muted: #6c757d;
+$radius: 8px;
+
+.biblioteka {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+// Hero
+.hero {
+  background: #fff;
+  border-bottom: 1px solid $border;
+  padding: 40px 32px;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: $muted;
+    font-size: 15px;
+  }
+}
+
+.search-bar {
+  display: flex;
+  gap: 0;
+  max-width: 600px;
+
+  input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid $border;
+    border-right: none;
+    border-radius: $radius 0 0 $radius;
+    font-size: 14px;
+    outline: none;
+
+    &:focus { border-color: #aaa; }
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0 $radius $radius 0;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover { background: #111; }
+
+    &.clear-btn {
+      background: #888;
+      border-radius: 0;
+      padding: 10px 14px;
+      &:hover { background: #555; }
+    }
+  }
+}
+
+// Layout
+.main-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  gap: 32px;
+}
+
+// Sidebar
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.sidebar-section {
+  margin-bottom: 32px;
+
+  h6 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $muted;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 8px 12px;
+      border-radius: $radius;
+      font-size: 14px;
+      cursor: pointer;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover { background: #f0f0f0; }
+
+      &.active {
+        background: #333;
+        color: #fff;
+        font-weight: 500;
+
+        .badge { background: rgba(255,255,255,0.25); color: #fff; }
+      }
+    }
+  }
+}
+
+.badge {
+  font-size: 11px;
+  background: #e9ecef;
+  color: $muted;
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-weight: 600;
+}
+
+// Content
+.content { flex: 1; min-width: 0; }
+
+.content-section { margin-bottom: 40px; }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid $border;
+  padding-bottom: 10px;
+
+  h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.results-count { font-size: 13px; color: $muted; }
+
+// Books grid
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  background: #fff;
+  border: 1px solid $border;
+  border-radius: $radius;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+
+  &:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+}
+
+.book-cover {
+  width: 100%;
+  height: 180px;
+  background: #e9ecef;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.no-cover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 11px;
+    color: $muted;
+    text-align: center;
+    line-height: 1.4;
+  }
+}
+
+.status-badge {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+
+  &.status-reading    { background: #dbeafe; color: #1d4ed8; }
+  &.status-want_to_read { background: #fef3c7; color: #92400e; }
+  &.status-finished   { background: #d1fae5; color: #065f46; }
+}
+
+.book-meta {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.book-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-author {
+  font-size: 12px;
+  color: $muted;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-year { font-size: 11px; color: #aaa; }
+
+// Search card add button
+.add-btn {
+  margin-top: 4px;
+  width: 100%;
+  padding: 6px 0;
+  border: 1px solid #333;
+  border-radius: $radius;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover:not(:disabled) {
+    background: #333;
+    color: #fff;
+  }
+
+  &:disabled {
+    background: #e9ecef;
+    border-color: #e9ecef;
+    color: $muted;
+    cursor: default;
+  }
+}
+
+// Progress bar
+.progress-bar-wrap {
+  margin-top: 4px;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #6366f1;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.progress-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.progress-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.page-input {
+  width: 42px;
+  text-align: center;
+  border: 1px solid $border;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 2px 4px;
+  color: #374151;
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #6366f1;
+  }
+}
+
+.progress-label {
+  font-size: 11px;
+  color: $muted;
+  white-space: nowrap;
+}
+
+.page-btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+
+  &:hover:not(:disabled) { background: #f3f4f6; border-color: #9ca3af; }
+  &:disabled { opacity: 0.3; cursor: default; }
+}
+
+// Library card actions
+.book-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.read-btn {
+  flex: 1;
+  padding: 6px 8px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: $radius;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover { background: #111; }
+}
+
+.upload-btn {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px dashed #aaa;
+  border-radius: $radius;
+  font-size: 12px;
+  color: $muted;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s;
+
+  &:hover:not(.uploading) {
+    border-color: #333;
+    color: #333;
+  }
+
+  &.uploading { opacity: 0.6; cursor: wait; }
+}
+
+.remove-btn {
+  padding: 6px 8px;
+  background: none;
+  border: 1px solid #e9ecef;
+  border-radius: $radius;
+  font-size: 13px;
+  cursor: pointer;
+  color: $muted;
+
+  &:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+  }
+}
+
+// Library empty state
+.library-empty {
+  padding: 40px 0;
+  text-align: center;
+  color: $muted;
+  font-size: 14px;
+
+  p { margin: 0 0 6px; }
+}
+
+// Loading/error
+.search-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0;
+  color: $muted;
+  font-size: 14px;
+}
+
+.search-error {
+  padding: 16px;
+  background: #fff3f3;
+  border: 1px solid #f5c6cb;
+  border-radius: $radius;
+  color: #721c24;
+  font-size: 14px;
+}
+
+.search-empty {
+  padding: 32px 0;
+  color: $muted;
+  font-size: 14px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e9ecef;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.spinner-sm {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

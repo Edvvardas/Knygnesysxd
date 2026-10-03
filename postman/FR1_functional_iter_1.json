@@ -1,0 +1,218 @@
+{
+  "info": {
+    "name": "Knygnesys FR1 Functional Tests",
+    "_postman_id": "knygnesys-fr1-collection",
+    "description": "FR-1 funkcinis reikalavimas - registracija ir prisijungimas. Paleisti su 1 iteracija.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:10032"
+    }
+  ],
+  "item": [
+    {
+      "name": "FR-1-TC1: Registracija sėkminga",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var timestamp = new Date().getTime();",
+              "pm.collectionVariables.set('email', 'testuser_' + timestamp + '@test.lt');",
+              "pm.collectionVariables.set('username', 'testuser_' + timestamp);"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC1: Statusas 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test('TC1: Atsakyme yra username', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.username).to.eql(pm.collectionVariables.get('username'));",
+              "});",
+              "pm.test('TC1: Atsakyme yra id', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.id).to.be.a('number');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{email}}\",\n  \"username\": \"{{username}}\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api", "auth", "register"] }
+      }
+    },
+    {
+      "name": "FR-1-TC2: Registracija - dublikatas",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC2: Statusas 400 kai vartotojas jau egzistuoja', function () {",
+              "    pm.response.to.have.status(400);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{email}}\",\n  \"username\": \"{{username}}\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api", "auth", "register"] }
+      }
+    },
+    {
+      "name": "FR-1-TC3: Prisijungimas sėkmingas",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC3: Statusas 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('TC3: Atsakyme yra username', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.username).to.eql(pm.collectionVariables.get('username'));",
+              "});",
+              "pm.test('TC3: Sesijos slapukas sukurtas', function () {",
+              "    pm.expect(pm.cookies.has('SESSION')).to.be.true;",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] }
+      }
+    },
+    {
+      "name": "FR-1-TC4: Prisijungimas - neteisingas slaptažodis",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC4: Statusas 400 arba 401 su netinkamais duomenimis', function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([400, 401]);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"wrongpassword\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] }
+      }
+    },
+    {
+      "name": "FR-1-TC5: Sesija išlieka - /api/users/me",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var baseUrl = pm.collectionVariables.get('baseUrl') || 'http://localhost:10032';",
+              "pm.sendRequest({",
+              "    url: baseUrl + '/api/auth/login',",
+              "    method: 'POST',",
+              "    header: { 'Content-Type': 'application/json' },",
+              "    body: {",
+              "        mode: 'raw',",
+              "        raw: JSON.stringify({",
+              "            username: pm.collectionVariables.get('username'),",
+              "            password: 'password123'",
+              "        })",
+              "    }",
+              "}, function (err, res) {",
+              "    console.log('Re-login status: ' + res.code);",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC5: Statusas 200 su aktyvia sesija', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test('TC5: Grąžinamas prisijungęs vartotojas', function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.username).to.eql(pm.collectionVariables.get('username'));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/users/me", "host": ["{{baseUrl}}"], "path": ["api", "users", "me"] }
+      }
+    },
+    {
+      "name": "FR-1-TC6: Atsijungimas ir 401 be sesijos",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var baseUrl = pm.collectionVariables.get('baseUrl') || 'http://localhost:10032';",
+              "pm.sendRequest({",
+              "    url: baseUrl + '/api/auth/logout',",
+              "    method: 'POST',",
+              "    header: { 'Content-Type': 'application/json' }",
+              "}, function (err, res) {",
+              "    console.log('Logout status: ' + res.code);",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC6: Statusas 401 po atsijungimo', function () {",
+              "    pm.response.to.have.status(401);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/users/me", "host": ["{{baseUrl}}"], "path": ["api", "users", "me"] }
+      }
+    }
+  ]
+}

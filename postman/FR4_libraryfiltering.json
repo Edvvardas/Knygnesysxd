@@ -1,0 +1,165 @@
+{
+  "info": {
+    "name": "Library Filter Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:10032" },
+    { "key": "bookId1", "value": "" },
+    { "key": "bookId2", "value": "" },
+    { "key": "bookId3", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "0. Register",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('201', () => pm.response.to.have.status(201));"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"username\":\"fr4testuser\",\"password\":\"testpass123\",\"email\":\"fr4testuser@test.lt\"}" },
+        "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api","auth","register"] }
+      }
+    },
+    {
+      "name": "1. Login",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('200', () => pm.response.to.have.status(200));"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"username\":\"fr4testuser\",\"password\":\"testpass123\"}" },
+        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api","auth","login"] }
+      }
+    },
+    {
+      "name": "2. Add book 1 (Tolkien, 600/1200)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('201', () => pm.response.to.have.status(201));",
+        "pm.collectionVariables.set('bookId1', pm.response.json().readingListId);"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"olId\":\"/works/OL_FR4_1\",\"title\":\"Ziedu valdovas\",\"author\":\"Tolkien\",\"coverUrl\":null,\"pageCount\":1200,\"status\":\"READING\"}" },
+        "url": { "raw": "{{baseUrl}}/api/library", "host": ["{{baseUrl}}"], "path": ["api","library"] }
+      }
+    },
+    {
+      "name": "2b. Set progress book 1 (600)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"currentPage\":600}" },
+        "url": { "raw": "{{baseUrl}}/api/library/{{bookId1}}/progress", "host": ["{{baseUrl}}"], "path": ["api","library","{{bookId1}}","progress"] }
+      }
+    },
+    {
+      "name": "3. Add book 2 (Herbert, 90/900)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('201', () => pm.response.to.have.status(201));",
+        "pm.collectionVariables.set('bookId2', pm.response.json().readingListId);"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"olId\":\"/works/OL_FR4_2\",\"title\":\"Duna\",\"author\":\"Frank Herbert\",\"coverUrl\":null,\"pageCount\":900,\"status\":\"READING\"}" },
+        "url": { "raw": "{{baseUrl}}/api/library", "host": ["{{baseUrl}}"], "path": ["api","library"] }
+      }
+    },
+    {
+      "name": "3b. Set progress book 2 (90)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"currentPage\":90}" },
+        "url": { "raw": "{{baseUrl}}/api/library/{{bookId2}}/progress", "host": ["{{baseUrl}}"], "path": ["api","library","{{bookId2}}","progress"] }
+      }
+    },
+    {
+      "name": "4. Add book 3 (Herbert, 0/700)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('201', () => pm.response.to.have.status(201));",
+        "pm.collectionVariables.set('bookId3', pm.response.json().readingListId);"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"olId\":\"/works/OL_FR4_3\",\"title\":\"Duno mesijas\",\"author\":\"Frank Herbert\",\"coverUrl\":null,\"pageCount\":700,\"status\":\"WANT_TO_READ\"}" },
+        "url": { "raw": "{{baseUrl}}/api/library", "host": ["{{baseUrl}}"], "path": ["api","library"] }
+      }
+    },
+    {
+      "name": "5. Filter by title",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('1 result, correct title', () => { pm.response.to.have.status(200); const b = pm.response.json(); pm.expect(b).to.have.lengthOf(1); pm.expect(b[0].title).to.eql('Ziedu valdovas'); });"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/library/filter?title=Ziedu valdovas", "host": ["{{baseUrl}}"], "path": ["api","library","filter"], "query": [{ "key": "title", "value": "Ziedu valdovas" }] }
+      }
+    },
+    {
+      "name": "6. Filter by author (2 books)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('2 results, all Herbert', () => { pm.response.to.have.status(200); const b = pm.response.json(); pm.expect(b).to.have.lengthOf(2); b.forEach(x => pm.expect(x.author).to.eql('Frank Herbert')); });"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/library/filter?author=Frank Herbert", "host": ["{{baseUrl}}"], "path": ["api","library","filter"], "query": [{ "key": "author", "value": "Frank Herbert" }] }
+      }
+    },
+    {
+      "name": "7. Filter progress=50 (currentPage>50 → 2 books)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('2 results, all currentPage>50', () => { pm.response.to.have.status(200); const b = pm.response.json(); pm.expect(b).to.have.lengthOf(2); b.forEach(x => pm.expect(x.currentPage).to.be.above(50)); });"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/library/filter?progress=50", "host": ["{{baseUrl}}"], "path": ["api","library","filter"], "query": [{ "key": "progress", "value": "50" }] }
+      }
+    },
+    {
+      "name": "8. Filter progress=600 (no match)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('empty array', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.have.lengthOf(0); });"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/library/filter?progress=600", "host": ["{{baseUrl}}"], "path": ["api","library","filter"], "query": [{ "key": "progress", "value": "600" }] }
+      }
+    },
+    {
+      "name": "9. Filter author + progress (Duna only)",
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('1 result = Duna', () => { pm.response.to.have.status(200); const b = pm.response.json(); pm.expect(b).to.have.lengthOf(1); pm.expect(b[0].title).to.eql('Duna'); });"
+      ], "type": "text/javascript" } }],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/library/filter?author=Frank Herbert&progress=80", "host": ["{{baseUrl}}"], "path": ["api","library","filter"], "query": [{ "key": "author", "value": "Frank Herbert" },{ "key": "progress", "value": "80" }] }
+      }
+    },
+    {
+      "name": "11. Cleanup book 1",
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('204', () => pm.response.to.have.status(204));"], "type": "text/javascript" } }],
+      "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/library/{{bookId1}}", "host": ["{{baseUrl}}"], "path": ["api","library","{{bookId1}}"] } }
+    },
+    {
+      "name": "12. Cleanup book 2",
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('204', () => pm.response.to.have.status(204));"], "type": "text/javascript" } }],
+      "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/library/{{bookId2}}", "host": ["{{baseUrl}}"], "path": ["api","library","{{bookId2}}"] } }
+    },
+    {
+      "name": "13. Cleanup book 3",
+      "event": [{ "listen": "test", "script": { "exec": ["pm.test('204', () => pm.response.to.have.status(204));"], "type": "text/javascript" } }],
+      "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/library/{{bookId3}}", "host": ["{{baseUrl}}"], "path": ["api","library","{{bookId3}}"] } }
+    }
+  ]
+}

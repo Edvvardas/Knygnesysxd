@@ -1,0 +1,83 @@
+{
+  "info": {
+    "name": "NFR3 Recommendations Performance",
+    "_postman_id": "nfr3-recommendations-performance",
+    "description": "NFR3 nefunkcinis testas: tikrinamas rekomendacijų API atsako laikas ir maksimalus grąžinamų rezultatų kiekis",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:10032"
+    }
+  ],
+  "item": [
+    {
+      "name": "NFR3-TC3: Rekomendacijų atsako laikas ir limitas",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var ts = new Date().getTime() + Math.floor(Math.random() * 10000);",
+              "var baseUrl = pm.collectionVariables.get('baseUrl');",
+              "var username = 'nfr3_' + ts;",
+              "pm.sendRequest({",
+              "  url: baseUrl + '/api/auth/register',",
+              "  method: 'POST',",
+              "  header: { 'Content-Type': 'application/json' },",
+              "  body: { mode: 'raw', raw: JSON.stringify({ email: username + '@test.lt', username: username, password: 'password123' }) }",
+              "}, function () {",
+              "  pm.sendRequest({",
+              "    url: baseUrl + '/api/auth/login',",
+              "    method: 'POST',",
+              "    header: { 'Content-Type': 'application/json' },",
+              "    body: { mode: 'raw', raw: JSON.stringify({ username: username, password: 'password123' }) }",
+              "  }, function () {",
+              "    pm.sendRequest({ url: baseUrl + '/api/recommendations/popular?limit=10', method: 'GET' }, function () {});",
+              "  });",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('TC3: Statusas 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "if (pm.response.code === 200) {",
+              "    var json = pm.response.json();",
+              "",
+              "    pm.test('TC3: Grąžinama ne daugiau kaip 10 rekomendacijų', function () {",
+              "        pm.expect(json.length).to.be.at.most(10);",
+              "    });",
+              "}",
+              "",
+              "pm.test('TC3: Atsako laikas mažesnis nei 2000 ms', function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/recommendations/popular?limit=10",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "recommendations", "popular"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

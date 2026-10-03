@@ -1,0 +1,13 @@
+services:
+  app:
+    build: ./knygnesys-app
+    ports:
+      - 10032:10032
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    networks:
+      - knygnesys_default
+
+networks:
+  knygnesys_default:
+    external: true
