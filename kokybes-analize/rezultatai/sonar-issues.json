@@ -1,0 +1,2614 @@
+{
+ "total": 40,
+ "p": 1,
+ "ps": 500,
+ "paging": {
+  "pageIndex": 1,
+  "pageSize": 500,
+  "total": 40
+ },
+ "effortTotal": 223,
+ "issues": [
+  {
+   "key": "229ac71b-2095-4675-8c83-d80c8f7afed1",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthApi.java",
+   "project": "knygnesys",
+   "line": 20,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 20,
+    "endLine": 20,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "b8de679c-461b-4e03-a0d6-dcb24817d166",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthApi.java",
+   "project": "knygnesys",
+   "line": 28,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 28,
+    "endLine": 28,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "780c0cf7-56b3-4a28-b444-1a03d25aa7a0",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java",
+   "project": "knygnesys",
+   "line": 19,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 19,
+    "endLine": 19,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "80a3bebd-d3be-4f6b-bd1f-0585239d94ba",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java",
+   "project": "knygnesys",
+   "line": 27,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 27,
+    "endLine": 27,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "30523578-08c5-46f7-b970-50349b02d01a",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java",
+   "project": "knygnesys",
+   "line": 36,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 36,
+    "endLine": 36,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "33f6d253-2c8c-4286-be93-a0d2c0c6d940",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java",
+   "project": "knygnesys",
+   "line": 26,
+   "hash": "0753f1a011a3d5b40b9ada44bee4bf08",
+   "textRange": {
+    "startLine": 26,
+    "endLine": 26,
+    "startOffset": 41,
+    "endOffset": 46
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "f51369e5-9e86-4f11-9cec-419913db7e64",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java",
+   "project": "knygnesys",
+   "line": 37,
+   "hash": "0753f1a011a3d5b40b9ada44bee4bf08",
+   "textRange": {
+    "startLine": 37,
+    "endLine": 37,
+    "startOffset": 41,
+    "endOffset": 46
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "6d4a1dab-0a65-431b-8e9f-d6eeb85dc9db",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java",
+   "project": "knygnesys",
+   "line": 52,
+   "hash": "0753f1a011a3d5b40b9ada44bee4bf08",
+   "textRange": {
+    "startLine": 52,
+    "endLine": 52,
+    "startOffset": 41,
+    "endOffset": 46
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "67199cc0-f4ba-45e7-99f5-7e8b127cff11",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java",
+   "project": "knygnesys",
+   "line": 27,
+   "hash": "0753f1a011a3d5b40b9ada44bee4bf08",
+   "textRange": {
+    "startLine": 27,
+    "endLine": 27,
+    "startOffset": 41,
+    "endOffset": 46
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "27827d64-9c42-4fd3-8b48-c67688d50ae1",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java",
+   "project": "knygnesys",
+   "line": 28,
+   "hash": "cedbd587b403fcfa7454f2c2c4fe3e7d",
+   "textRange": {
+    "startLine": 28,
+    "endLine": 28,
+    "startOffset": 45,
+    "endOffset": 50
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "8a3c829d-00eb-428c-8306-69e745b2674b",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java",
+   "project": "knygnesys",
+   "line": 37,
+   "hash": "eced4e5e5ebe4168f9877e9176524a22",
+   "textRange": {
+    "startLine": 37,
+    "endLine": 37,
+    "startOffset": 49,
+    "endOffset": 54
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "83c53d06-ec27-466d-a213-ad1ba30044d3",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/progress/ReadingProgress.java",
+   "project": "knygnesys",
+   "line": 39,
+   "hash": "ceb1f682f776383285e2a80c72a5d3d3",
+   "textRange": {
+    "startLine": 39,
+    "endLine": 39,
+    "startOffset": 34,
+    "endOffset": 39
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "453f88d8-57f7-4ead-8d6a-0a893c745ae4",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/ReadingList.java",
+   "project": "knygnesys",
+   "line": 44,
+   "hash": "c3591625e901a242c0e147d3bc18a043",
+   "textRange": {
+    "startLine": 44,
+    "endLine": 44,
+    "startOffset": 32,
+    "endOffset": 37
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "b06084a5-49b7-461b-b12a-780b8fd04f0c",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "project": "knygnesys",
+   "line": 24,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 24,
+    "endLine": 24,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "2c95c5d2-c12f-471c-aa1c-9b645db4b31d",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "project": "knygnesys",
+   "line": 32,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 32,
+    "endLine": 32,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "c6652f2b-ee2a-421e-b56c-fa428ef5c9e0",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "project": "knygnesys",
+   "line": 44,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 44,
+    "endLine": 44,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "11d2031d-a5db-4596-956e-982e7e7bf5a3",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "project": "knygnesys",
+   "line": 57,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 57,
+    "endLine": 57,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "b168f37e-69bd-438a-ab4c-32b39cf2dc8a",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "project": "knygnesys",
+   "line": 69,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 69,
+    "endLine": 69,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "617992b1-535b-4536-8e57-ad5ec6b8263a",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "project": "knygnesys",
+   "line": 82,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 82,
+    "endLine": 82,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "518ff2f3-099b-4bd8-97ba-455a256cfd79",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "project": "knygnesys",
+   "line": 95,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 95,
+    "endLine": 95,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "88594f68-a046-4e21-a72e-3f4e0e6e9aee",
+   "rule": "java:S1192",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+   "project": "knygnesys",
+   "line": 89,
+   "hash": "24c5635999212e6a6d6725dc4358bda0",
+   "textRange": {
+    "startLine": 89,
+    "endLine": 89,
+    "startOffset": 65,
+    "endOffset": 94
+   },
+   "flows": [
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+       "textRange": {
+        "startLine": 109,
+        "endLine": 109,
+        "startOffset": 65,
+        "endOffset": 94
+       },
+       "msg": "Duplication",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+       "textRange": {
+        "startLine": 121,
+        "endLine": 121,
+        "startOffset": 65,
+        "endOffset": 94
+       },
+       "msg": "Duplication",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+       "textRange": {
+        "startLine": 133,
+        "endLine": 133,
+        "startOffset": 65,
+        "endOffset": 94
+       },
+       "msg": "Duplication",
+       "msgFormattings": []
+      }
+     ]
+    }
+   ],
+   "status": "OPEN",
+   "message": "Define a constant instead of duplicating this literal \"Bibliotekos įrašas nerastas\" 4 times.",
+   "effort": "10min",
+   "debt": "10min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "design"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "DISTINCT",
+   "cleanCodeAttributeCategory": "ADAPTABLE",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "537b821c-9365-4918-ab94-32665c005dde",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+   "project": "knygnesys",
+   "line": 138,
+   "hash": "da7d2708083f3354a94ab47c7eecd28c",
+   "textRange": {
+    "startLine": 138,
+    "endLine": 138,
+    "startOffset": 47,
+    "endOffset": 52
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "d37bc0ef-4841-46e1-b713-e357603f7481",
+   "rule": "java:S6885",
+   "severity": "MAJOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/recommendation/service/RecommendationsService.java",
+   "project": "knygnesys",
+   "line": 24,
+   "hash": "824f81e94caf69242b63e3d3db0ec2f1",
+   "textRange": {
+    "startLine": 24,
+    "endLine": 24,
+    "startOffset": 24,
+    "endOffset": 56
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Use \"Math.clamp\" instead of \"Math.min\" or \"Math.max\".",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java21"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CONVENTIONAL",
+   "cleanCodeAttributeCategory": "CONSISTENT",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "MEDIUM"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "d7ae5e20-49ed-4f6f-b218-e90eeb9e7af3",
+   "rule": "java:S4502",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java",
+   "project": "knygnesys",
+   "line": 24,
+   "hash": "a6c4d18dbd47ffaf8188f3ce45188aa6",
+   "textRange": {
+    "startLine": 24,
+    "endLine": 24,
+    "startOffset": 35,
+    "endOffset": 42
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Make sure disabling Spring Security's CSRF protection is safe here.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "cwe",
+    "spring",
+    "former-hotspot"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "VULNERABILITY",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CONVENTIONAL",
+   "cleanCodeAttributeCategory": "CONSISTENT",
+   "impacts": [
+    {
+     "softwareQuality": "SECURITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "74a5525d-00cf-41eb-b423-1ae2bd19e2a6",
+   "rule": "java:S5344",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java",
+   "project": "knygnesys",
+   "line": 48,
+   "hash": "34593a540c3f5e83e23350f0f0b65cbf",
+   "textRange": {
+    "startLine": 48,
+    "endLine": 48,
+    "startOffset": 35,
+    "endOffset": 46
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Use secure \"PasswordEncoder\" implementation.",
+   "effort": "30min",
+   "debt": "30min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "cwe",
+    "spring"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "VULNERABILITY",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "TRUSTWORTHY",
+   "cleanCodeAttributeCategory": "RESPONSIBLE",
+   "impacts": [
+    {
+     "softwareQuality": "SECURITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "a3e46420-ae83-40fa-9b7e-261b49dd1de4",
+   "rule": "java:S4790",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java",
+   "project": "knygnesys",
+   "line": 48,
+   "hash": "34593a540c3f5e83e23350f0f0b65cbf",
+   "textRange": {
+    "startLine": 48,
+    "endLine": 48,
+    "startOffset": 35,
+    "endOffset": 46
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+   "effort": "30min",
+   "debt": "30min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "cwe",
+    "former-hotspot"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "VULNERABILITY",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "TRUSTWORTHY",
+   "cleanCodeAttributeCategory": "RESPONSIBLE",
+   "impacts": [
+    {
+     "softwareQuality": "SECURITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "d828e194-d65e-475c-a4a9-7f26fb35a1ff",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java",
+   "project": "knygnesys",
+   "line": 24,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 24,
+    "endLine": 24,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "df98a63c-b5ea-47c7-a1fc-1bf5f39ec046",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java",
+   "project": "knygnesys",
+   "line": 38,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 38,
+    "endLine": 38,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "fc518422-2bae-400a-b9b9-83312d465531",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java",
+   "project": "knygnesys",
+   "line": 51,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 51,
+    "endLine": 51,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "f594c1e4-5812-460d-b305-5ebf863f3545",
+   "rule": "java:S1192",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 39,
+   "hash": "2c401d68b79985751bb449af1e6eab80",
+   "textRange": {
+    "startLine": 39,
+    "endLine": 39,
+    "startOffset": 36,
+    "endOffset": 43
+   },
+   "flows": [
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 166,
+        "endLine": 166,
+        "startOffset": 17,
+        "endOffset": 24
+       },
+       "msg": "Duplication",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 202,
+        "endLine": 202,
+        "startOffset": 17,
+        "endOffset": 24
+       },
+       "msg": "Duplication",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 247,
+        "endLine": 247,
+        "startOffset": 17,
+        "endOffset": 24
+       },
+       "msg": "Duplication",
+       "msgFormattings": []
+      }
+     ]
+    }
+   ],
+   "status": "OPEN",
+   "message": "Define a constant instead of duplicating this literal \"MONTH\" 4 times.",
+   "effort": "10min",
+   "debt": "10min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "design"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "DISTINCT",
+   "cleanCodeAttributeCategory": "ADAPTABLE",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "e3237404-1069-4da3-a23b-16ce7b8f267d",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 62,
+   "hash": "006a6999bc3d1f0cd09c1e420c13c75b",
+   "textRange": {
+    "startLine": 62,
+    "endLine": 62,
+    "startOffset": 32,
+    "endOffset": 37
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "fadf814e-b6b8-404d-a217-99960f2c9069",
+   "rule": "java:S3776",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 72,
+   "hash": "362b849bfcf4787fe5a72ac3ec2c443e",
+   "textRange": {
+    "startLine": 72,
+    "endLine": 72,
+    "startOffset": 35,
+    "endOffset": 49
+   },
+   "flows": [
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 75,
+        "endLine": 75,
+        "startOffset": 45,
+        "endOffset": 46
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 77,
+        "endLine": 77,
+        "startOffset": 16,
+        "endOffset": 17
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 79,
+        "endLine": 79,
+        "startOffset": 8,
+        "endOffset": 10
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 91,
+        "endLine": 91,
+        "startOffset": 8,
+        "endOffset": 11
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 99,
+        "endLine": 99,
+        "startOffset": 8,
+        "endOffset": 11
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 102,
+        "endLine": 102,
+        "startOffset": 12,
+        "endOffset": 15
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 104,
+        "endLine": 104,
+        "startOffset": 16,
+        "endOffset": 18
+       },
+       "msg": "+3 (incl 2 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 116,
+        "endLine": 116,
+        "startOffset": 12,
+        "endOffset": 15
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 118,
+        "endLine": 118,
+        "startOffset": 16,
+        "endOffset": 18
+       },
+       "msg": "+3 (incl 2 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 118,
+        "endLine": 118,
+        "startOffset": 35,
+        "endOffset": 37
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    }
+   ],
+   "status": "OPEN",
+   "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+   "effort": "6min",
+   "debt": "6min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "brain-overload"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "FOCUSED",
+   "cleanCodeAttributeCategory": "ADAPTABLE",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "fe563341-da89-4b37-bab0-ed9eab9c942d",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 75,
+   "hash": "bcb14c9531ee54fa613675c5760b330f",
+   "textRange": {
+    "startLine": 75,
+    "endLine": 75,
+    "startOffset": 84,
+    "endOffset": 89
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "fbd265ed-31ca-4cee-b82a-72fe5b173149",
+   "rule": "java:S2184",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 78,
+   "hash": "c9d796d9b78a642a1b4d8a924aee607e",
+   "textRange": {
+    "startLine": 78,
+    "endLine": 78,
+    "startOffset": 42,
+    "endOffset": 43
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Cast one of the operands of this subtraction operation to a \"long\".",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "cwe",
+    "overflow",
+    "cert"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "BUG",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "d0a208ce-54d6-4b2b-89c4-4ae2704e95c0",
+   "rule": "java:S3776",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 179,
+   "hash": "25b93c2283593c85ef70d5168b70d149",
+   "textRange": {
+    "startLine": 179,
+    "endLine": 179,
+    "startOffset": 33,
+    "endOffset": 56
+   },
+   "flows": [
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 183,
+        "endLine": 183,
+        "startOffset": 8,
+        "endOffset": 14
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 186,
+        "endLine": 186,
+        "startOffset": 16,
+        "endOffset": 21
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 196,
+        "endLine": 196,
+        "startOffset": 16,
+        "endOffset": 21
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 205,
+        "endLine": 205,
+        "startOffset": 16,
+        "endOffset": 21
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 214,
+        "endLine": 214,
+        "startOffset": 16,
+        "endOffset": 21
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 222,
+        "endLine": 222,
+        "startOffset": 8,
+        "endOffset": 11
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 223,
+        "endLine": 223,
+        "startOffset": 12,
+        "endOffset": 14
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 223,
+        "endLine": 223,
+        "startOffset": 43,
+        "endOffset": 45
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 226,
+        "endLine": 226,
+        "startOffset": 16,
+        "endOffset": 18
+       },
+       "msg": "+3 (incl 2 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 231,
+        "endLine": 231,
+        "startOffset": 12,
+        "endOffset": 14
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 231,
+        "endLine": 231,
+        "startOffset": 47,
+        "endOffset": 49
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 234,
+        "endLine": 234,
+        "startOffset": 16,
+        "endOffset": 18
+       },
+       "msg": "+3 (incl 2 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    }
+   ],
+   "status": "OPEN",
+   "message": "Refactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.",
+   "effort": "12min",
+   "debt": "12min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "brain-overload"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "FOCUSED",
+   "cleanCodeAttributeCategory": "ADAPTABLE",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "fa3028b0-ce31-4434-ab82-e9ded6bef6d1",
+   "rule": "java:S131",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 183,
+   "hash": "e90a65ca3a2c14a3607cfe70dbe056fd",
+   "textRange": {
+    "startLine": 183,
+    "endLine": 183,
+    "startOffset": 8,
+    "endOffset": 14
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Add a default case to this switch.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "cwe",
+    "cert"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "6afe5f51-9f8f-47ef-8f2f-8573af640bbd",
+   "rule": "java:S3776",
+   "severity": "CRITICAL",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "project": "knygnesys",
+   "line": 257,
+   "hash": "610dc6bbe28fea3c6a025a0bcb79a233",
+   "textRange": {
+    "startLine": 257,
+    "endLine": 257,
+    "startOffset": 33,
+    "endOffset": 48
+   },
+   "flows": [
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 261,
+        "endLine": 261,
+        "startOffset": 8,
+        "endOffset": 10
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 262,
+        "endLine": 262,
+        "startOffset": 12,
+        "endOffset": 15
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 266,
+        "endLine": 266,
+        "startOffset": 15,
+        "endOffset": 17
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 269,
+        "endLine": 269,
+        "startOffset": 12,
+        "endOffset": 17
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 274,
+        "endLine": 274,
+        "startOffset": 10,
+        "endOffset": 14
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 277,
+        "endLine": 277,
+        "startOffset": 12,
+        "endOffset": 17
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 284,
+        "endLine": 284,
+        "startOffset": 8,
+        "endOffset": 11
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 285,
+        "endLine": 285,
+        "startOffset": 12,
+        "endOffset": 14
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 285,
+        "endLine": 285,
+        "startOffset": 43,
+        "endOffset": 45
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 288,
+        "endLine": 288,
+        "startOffset": 16,
+        "endOffset": 18
+       },
+       "msg": "+3 (incl 2 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 293,
+        "endLine": 293,
+        "startOffset": 12,
+        "endOffset": 14
+       },
+       "msg": "+2 (incl 1 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 293,
+        "endLine": 293,
+        "startOffset": 47,
+        "endOffset": 49
+       },
+       "msg": "+1",
+       "msgFormattings": []
+      }
+     ]
+    },
+    {
+     "locations": [
+      {
+       "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+       "textRange": {
+        "startLine": 296,
+        "endLine": 296,
+        "startOffset": 16,
+        "endOffset": 18
+       },
+       "msg": "+3 (incl 2 for nesting)",
+       "msgFormattings": []
+      }
+     ]
+    }
+   ],
+   "status": "OPEN",
+   "message": "Refactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.",
+   "effort": "12min",
+   "debt": "12min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "brain-overload"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "FOCUSED",
+   "cleanCodeAttributeCategory": "ADAPTABLE",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "HIGH"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "9f79a69d-08d7-4f04-9d48-a1bc50dfd336",
+   "rule": "java:S8688",
+   "severity": "INFO",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/User.java",
+   "project": "knygnesys",
+   "line": 34,
+   "hash": "7e46079347158bdfee9b5d0dce216dce",
+   "textRange": {
+    "startLine": 34,
+    "endLine": 34,
+    "startOffset": 34,
+    "endOffset": 39
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Explicitly specify the time zone by passing a ZoneId or a Clock to the .now() method.",
+   "effort": "5min",
+   "debt": "5min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "datetime",
+    "java8",
+    "timezone",
+    "pitfall"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "LOGICAL",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "RELIABILITY",
+     "severity": "INFO"
+    },
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "INFO"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "76a9059d-410e-44d1-a760-c731d29f12b4",
+   "rule": "java:S1710",
+   "severity": "MINOR",
+   "component": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/controller/UserApi.java",
+   "project": "knygnesys",
+   "line": 19,
+   "hash": "2555b2a47889be7012dc06dc4661a69c",
+   "textRange": {
+    "startLine": 19,
+    "endLine": 19,
+    "startOffset": 5,
+    "endOffset": 17
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove the 'ApiResponses' wrapper from this annotation group",
+   "effort": "2min",
+   "debt": "2min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "java8"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "MAIN",
+   "quickFixAvailable": false,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  },
+  {
+   "key": "1d50ef46-544b-4c5f-aca0-37cdb7dce5d7",
+   "rule": "java:S1128",
+   "severity": "MINOR",
+   "component": "knygnesys:src/test/java/lt/prifkodas/knygnesys/stats/service/StatsServiceTest.java",
+   "project": "knygnesys",
+   "line": 20,
+   "hash": "0db7c6f5147c996631e0bb9b53c159fe",
+   "textRange": {
+    "startLine": 20,
+    "endLine": 20,
+    "startOffset": 7,
+    "endOffset": 26
+   },
+   "flows": [],
+   "status": "OPEN",
+   "message": "Remove this unused import 'java.time.LocalDate'.",
+   "effort": "1min",
+   "debt": "1min",
+   "author": "edvardas.tamulevicius@gmail.com",
+   "tags": [
+    "unused"
+   ],
+   "creationDate": "2026-10-03T15:50:40+0000",
+   "updateDate": "2026-10-05T18:04:38+0000",
+   "type": "CODE_SMELL",
+   "scope": "TEST",
+   "quickFixAvailable": true,
+   "messageFormattings": [],
+   "codeVariants": [],
+   "cleanCodeAttribute": "CLEAR",
+   "cleanCodeAttributeCategory": "INTENTIONAL",
+   "impacts": [
+    {
+     "softwareQuality": "MAINTAINABILITY",
+     "severity": "LOW"
+    }
+   ],
+   "issueStatus": "OPEN",
+   "prioritizedRule": false,
+   "fromSonarQubeUpdate": false,
+   "internalTags": [],
+   "linkedTicketStatus": "NOT_LINKED"
+  }
+ ],
+ "components": [
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/ReadingList.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "ReadingList.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/readinglist/ReadingList.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/ReadingList.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "LibraryService.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/recommendation/service/RecommendationsService.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "RecommendationsService.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/recommendation/service/RecommendationsService.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/recommendation/service/RecommendationsService.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "LibraryApi.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "GoalApi.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "SecurityConfig.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "StatsApi.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/controller/UserApi.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "UserApi.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/user/controller/UserApi.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/user/controller/UserApi.java"
+  },
+  {
+   "key": "knygnesys:src/test/java/lt/prifkodas/knygnesys/stats/service/StatsServiceTest.java",
+   "enabled": true,
+   "qualifier": "UTS",
+   "name": "StatsServiceTest.java",
+   "longName": "src/test/java/lt/prifkodas/knygnesys/stats/service/StatsServiceTest.java",
+   "path": "src/test/java/lt/prifkodas/knygnesys/stats/service/StatsServiceTest.java"
+  },
+  {
+   "key": "knygnesys",
+   "enabled": true,
+   "qualifier": "TRK",
+   "name": "Knygnesys-backend",
+   "longName": "Knygnesys-backend"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "StatsService.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/User.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "User.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/user/User.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/user/User.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/progress/ReadingProgress.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "ReadingProgress.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/progress/ReadingProgress.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/progress/ReadingProgress.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "GoalService.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "InactivitySchedulerService.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java"
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthApi.java",
+   "enabled": true,
+   "qualifier": "FIL",
+   "name": "AuthApi.java",
+   "longName": "src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthApi.java",
+   "path": "src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthApi.java"
+  }
+ ],
+ "facets": []
+}

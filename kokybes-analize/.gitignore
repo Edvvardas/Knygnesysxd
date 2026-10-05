@@ -1,0 +1,5 @@
+# Parsisiųsti įrankiai (JDK 21, PMD, CK) ir SonarQube token'as – į repozitoriją nekeliami
+tools/
+# Lokalūs keliai / logai
+rezultatai/classpath.txt
+rezultatai/*.log

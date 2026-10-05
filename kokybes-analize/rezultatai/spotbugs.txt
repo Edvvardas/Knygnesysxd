@@ -1,0 +1,44 @@
+Iš viso radinių: 21
+
+[Medium] BAD_PRACTICE/VA_FORMAT_STRING_USES_NEWLINE @ goal.service.EmailService (EmailService.java:34)
+    Format string should use %n rather than \n
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP @ readinglist.ReadingList (ReadingList.java:25)
+    May expose internal representation by returning reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP @ readinglist.ReadingList (ReadingList.java:21)
+    May expose internal representation by returning reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP @ recommendation.dto.OpenLibraryBookDoc (OpenLibraryBookDoc.java:15)
+    May expose internal representation by returning reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP @ recommendation.dto.OpenLibrarySearchResponse (OpenLibrarySearchResponse.java:9)
+    May expose internal representation by returning reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP @ stats.dto.StatsResponse (StatsResponse.java:15)
+    May expose internal representation by returning reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP @ stats.dto.StatsResponse (StatsResponse.java:13)
+    May expose internal representation by returning reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ goal.controller.GoalController (GoalController.java:13)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ readinglist.ReadingList (ReadingList.java:11)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ readinglist.ReadingList (ReadingList.java:11)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ readinglist.controller.LibraryController (LibraryController.java:21)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ recommendation.dto.OpenLibraryBookDoc (OpenLibraryBookDoc.java:8)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ recommendation.dto.OpenLibrarySearchResponse (OpenLibrarySearchResponse.java:7)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ stats.dto.StatsResponse (StatsResponse.java:10)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ stats.dto.StatsResponse (StatsResponse.java:10)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ stats.dto.StatsResponse (StatsResponse.java:9)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] MALICIOUS_CODE/EI_EXPOSE_REP2 @ stats.dto.StatsResponse (StatsResponse.java:9)
+    May expose internal representation by incorporating reference to mutable object
+[Medium] STYLE/SF_SWITCH_NO_DEFAULT @ stats.service.StatsService (StatsService.java:151)
+    Switch statement found where default case is missing
+[Low] I18N/DM_CONVERT_CASE @ readinglist.service.LibraryService (LibraryService.java:77)
+    Consider using Locale parameterized version of invoked method
+[Low] I18N/DM_CONVERT_CASE @ stats.service.StatsService (StatsService.java:38)
+    Consider using Locale parameterized version of invoked method
+[Low] STYLE/DB_DUPLICATE_SWITCH_CLAUSES @ stats.service.StatsService (StatsService.java:245)
+    Method uses the same code for two switch clauses
