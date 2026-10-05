@@ -1,0 +1,1463 @@
+{
+ "paging": {
+  "pageIndex": 1,
+  "pageSize": 500,
+  "total": 53
+ },
+ "baseComponent": {
+  "key": "knygnesys",
+  "name": "Knygnesys-backend",
+  "description": "Parent pom providing dependency and plugin management for applications built with Maven",
+  "qualifier": "TRK",
+  "measures": []
+ },
+ "components": [
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/dto/AddBookRequest.java",
+   "name": "AddBookRequest.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/dto/AddBookRequest.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "16"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthApi.java",
+   "name": "AuthApi.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthApi.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "2",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "35"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "4",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthController.java",
+   "name": "AuthController.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/auth/controller/AuthController.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "3"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "33"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/dto/AuthResponse.java",
+   "name": "AuthResponse.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/auth/dto/AuthResponse.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "12"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/service/AuthService.java",
+   "name": "AuthService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/auth/service/AuthService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "cognitive_complexity",
+     "value": "2",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "6"
+    },
+    {
+     "metric": "coverage",
+     "value": "100.0",
+     "bestValue": true
+    },
+    {
+     "metric": "ncloc",
+     "value": "55"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/book/Book.java",
+   "name": "Book.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/book/Book.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "24"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/book/repository/BookRepository.java",
+   "name": "BookRepository.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/book/repository/BookRepository.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "7"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/CorsConfig.java",
+   "name": "CorsConfig.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/shared/config/CorsConfig.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "1"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "20"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/EmailService.java",
+   "name": "EmailService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/service/EmailService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "2"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "21"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/dto/GenreDataPoint.java",
+   "name": "GenreDataPoint.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/dto/GenreDataPoint.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "11"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/exception/GlobalExceptionHandler.java",
+   "name": "GlobalExceptionHandler.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/shared/exception/GlobalExceptionHandler.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "2"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "16"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/Goal.java",
+   "name": "Goal.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/Goal.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "20"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java",
+   "name": "GoalApi.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalApi.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "3",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "41"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "6",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalController.java",
+   "name": "GoalController.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/controller/GoalController.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "3"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "26"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/repository/GoalRepository.java",
+   "name": "GoalRepository.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/repository/GoalRepository.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "14"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/dto/GoalResponse.java",
+   "name": "GoalResponse.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/dto/GoalResponse.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "12"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java",
+   "name": "GoalService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/service/GoalService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "3",
+     "bestValue": false
+    },
+    {
+     "metric": "cognitive_complexity",
+     "value": "2",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "9"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "57"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "15",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java",
+   "name": "InactivitySchedulerService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/service/InactivitySchedulerService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "3",
+     "bestValue": false
+    },
+    {
+     "metric": "cognitive_complexity",
+     "value": "3",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "2"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "38"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "15",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/KnygnesysApplication.java",
+   "name": "KnygnesysApplication.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/KnygnesysApplication.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "1"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "17"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "name": "LibraryApi.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryApi.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "7",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "95"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "14",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/dto/LibraryBookDto.java",
+   "name": "LibraryBookDto.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/dto/LibraryBookDto.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "20"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryController.java",
+   "name": "LibraryController.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/controller/LibraryController.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "7"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "66"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+   "name": "LibraryService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/service/LibraryService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "2",
+     "bestValue": false
+    },
+    {
+     "metric": "cognitive_complexity",
+     "value": "14",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "28"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "136"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "15",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/dto/LoginRequest.java",
+   "name": "LoginRequest.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/auth/dto/LoginRequest.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "11"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/OpenApiConfig.java",
+   "name": "OpenApiConfig.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/shared/config/OpenApiConfig.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "1"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "16"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/recommendation/dto/OpenLibraryBookDoc.java",
+   "name": "OpenLibraryBookDoc.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/recommendation/dto/OpenLibraryBookDoc.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "13"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/recommendation/dto/OpenLibrarySearchResponse.java",
+   "name": "OpenLibrarySearchResponse.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/recommendation/dto/OpenLibrarySearchResponse.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "7"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/dto/PagesDayDataPoint.java",
+   "name": "PagesDayDataPoint.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/dto/PagesDayDataPoint.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "11"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:pom.xml",
+   "name": "pom.xml",
+   "qualifier": "FIL",
+   "path": "pom.xml",
+   "language": "xml",
+   "measures": [
+    {
+     "metric": "ncloc",
+     "value": "87"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/ReadingList.java",
+   "name": "ReadingList.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/ReadingList.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "1",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "1"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "34"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "5",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/repository/ReadingListRepository.java",
+   "name": "ReadingListRepository.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/repository/ReadingListRepository.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "24"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/progress/ReadingProgress.java",
+   "name": "ReadingProgress.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/progress/ReadingProgress.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "1",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "2"
+    },
+    {
+     "metric": "coverage",
+     "value": "71.4",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "31"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "5",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/progress/repository/ReadingProgressRepository.java",
+   "name": "ReadingProgressRepository.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/progress/repository/ReadingProgressRepository.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "8"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/recommendation/dto/RecommendationDto.java",
+   "name": "RecommendationDto.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/recommendation/dto/RecommendationDto.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "13"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/recommendation/controller/RecommendationsController.java",
+   "name": "RecommendationsController.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/recommendation/controller/RecommendationsController.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "1"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "22"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/recommendation/service/RecommendationsService.java",
+   "name": "RecommendationsService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/recommendation/service/RecommendationsService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "1",
+     "bestValue": false
+    },
+    {
+     "metric": "cognitive_complexity",
+     "value": "5",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "7"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "54"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "5",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/auth/dto/RegisterRequest.java",
+   "name": "RegisterRequest.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/auth/dto/RegisterRequest.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "12"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/exception/ResourceNotFoundException.java",
+   "name": "ResourceNotFoundException.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/shared/exception/ResourceNotFoundException.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "1"
+    },
+    {
+     "metric": "coverage",
+     "value": "100.0",
+     "bestValue": true
+    },
+    {
+     "metric": "ncloc",
+     "value": "6"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java",
+   "name": "SecurityConfig.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/shared/config/SecurityConfig.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "9"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "49"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/goal/dto/SetGoalRequest.java",
+   "name": "SetGoalRequest.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/goal/dto/SetGoalRequest.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "10"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java",
+   "name": "StatsApi.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsApi.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "3",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "53"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "6",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsController.java",
+   "name": "StatsController.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/controller/StatsController.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "3"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "39"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/dto/StatsDataPoint.java",
+   "name": "StatsDataPoint.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/dto/StatsDataPoint.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "12"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/dto/StatsResponse.java",
+   "name": "StatsResponse.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/dto/StatsResponse.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "13"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "name": "StatsService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/service/StatsService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "7",
+     "bestValue": false
+    },
+    {
+     "metric": "cognitive_complexity",
+     "value": "73",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "83"
+    },
+    {
+     "metric": "coverage",
+     "value": "70.2",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "262"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "55",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/stats/dto/StatsSummary.java",
+   "name": "StatsSummary.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/stats/dto/StatsSummary.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "13"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/readinglist/dto/UpdateProgressRequest.java",
+   "name": "UpdateProgressRequest.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/readinglist/dto/UpdateProgressRequest.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "10"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/User.java",
+   "name": "User.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/user/User.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "1",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "1"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "26"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "5",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/controller/UserApi.java",
+   "name": "UserApi.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/user/controller/UserApi.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "code_smells",
+     "value": "1",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "22"
+    },
+    {
+     "metric": "sqale_index",
+     "value": "2",
+     "bestValue": false
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/controller/UserController.java",
+   "name": "UserController.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/user/controller/UserController.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "cognitive_complexity",
+     "value": "1",
+     "bestValue": false
+    },
+    {
+     "metric": "complexity",
+     "value": "2"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "22"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/shared/config/UserDetailsServiceImpl.java",
+   "name": "UserDetailsServiceImpl.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/shared/config/UserDetailsServiceImpl.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "2"
+    },
+    {
+     "metric": "coverage",
+     "value": "0.0",
+     "bestValue": false
+    },
+    {
+     "metric": "ncloc",
+     "value": "24"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/repository/UserRepository.java",
+   "name": "UserRepository.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/user/repository/UserRepository.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "0"
+    },
+    {
+     "metric": "ncloc",
+     "value": "14"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  },
+  {
+   "key": "knygnesys:src/main/java/lt/prifkodas/knygnesys/user/service/UserService.java",
+   "name": "UserService.java",
+   "qualifier": "FIL",
+   "path": "src/main/java/lt/prifkodas/knygnesys/user/service/UserService.java",
+   "language": "java",
+   "measures": [
+    {
+     "metric": "complexity",
+     "value": "6"
+    },
+    {
+     "metric": "coverage",
+     "value": "100.0",
+     "bestValue": true
+    },
+    {
+     "metric": "ncloc",
+     "value": "26"
+    },
+    {
+     "metric": "sqale_rating",
+     "value": "1.0",
+     "bestValue": true
+    }
+   ]
+  }
+ ]
+}

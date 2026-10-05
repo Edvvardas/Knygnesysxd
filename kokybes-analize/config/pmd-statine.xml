@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset name="Statine analize"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+  <description>PMD statinė analizė: oficialus quickstart rinkinys + keletas design taisyklių su numatytaisiais slenksčiais.</description>
+  <rule ref="rulesets/java/quickstart.xml"/>
+  <rule ref="category/java/design.xml/CyclomaticComplexity"/>
+  <rule ref="category/java/design.xml/CognitiveComplexity"/>
+  <rule ref="category/java/design.xml/NPathComplexity"/>
+  <rule ref="category/java/design.xml/CouplingBetweenObjects"/>
+  <rule ref="category/java/design.xml/ExcessiveImports"/>
+  <rule ref="category/java/design.xml/GodClass"/>
+  <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition"/>
+  <rule ref="category/java/bestpractices.xml/AvoidReassigningLoopVariables"/>
+  <rule ref="category/java/errorprone.xml/AvoidDuplicateLiterals"/>
+  <rule ref="category/java/design.xml/AvoidCatchingGenericException"/>
+</ruleset>
